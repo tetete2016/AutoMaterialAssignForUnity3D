@@ -5,19 +5,12 @@ using UnityEditor;
 
 public class AutoMaterialAssign : EditorWindow
 {
-    string myString = "Hello World";
-    bool groupEnabled;
-    bool myBool = true;
-    float myFloat = 1.23f;
-
-   //Material mat;
     string query;
     string exclude;
     int slot;
     bool searched;
     List<MeshRenderer> meshRenderers;
-    //bool perfectMatch;
-    // Add menu named "My Window" to the Window menu
+
     [MenuItem("Window/Assign Material")]
     static void Init()
     {
@@ -94,7 +87,7 @@ public class AutoMaterialAssign : EditorWindow
             {
                 ReplaceMaterial();
             }
-            EditorGUILayout.BeginScrollView(scroll);
+            scroll=EditorGUILayout.BeginScrollView(scroll);
             GUILayout.Label("Search Results", EditorStyles.boldLabel);
             for (int i = 0; i < meshRenderers.Count; i++)
             {
